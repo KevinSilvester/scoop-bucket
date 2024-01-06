@@ -1,6 +1,6 @@
 {
     "version": "nightly",
-    "description": "GPU-accelerated terminal emulator",
+    "description": "GPU-accelerated terminal emulator (nightly builds)",
     "homepage": "https://github.com/wez/wezterm",
     "license": "Apache-2.0",
     "architecture": {
@@ -8,15 +8,13 @@
             "url": "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip"
         }
     },
-    "extract_dir": "WezTerm-windows-nightly",
-    "bin": [
-        "wezterm.exe",
-        "wezterm-gui.exe"
-    ],
-    "shortcuts": [
-        [
-            "wezterm-gui.exe",
-            "Wezterm"
+    "installer": {
+        "script": [
+            "$foldername = (Get-Item $dir\\WezTerm-windows-*).Name",
+            "Move-Item $dir\\$foldername\\* $dir",
+            "Remove-Item $dir\\$foldername"
         ]
-    ]
+    },
+    "bin": ["wezterm.exe", "wezterm-gui.exe"],
+    "shortcuts": [["wezterm-gui.exe", "Wezterm"]]
 }

@@ -22,11 +22,11 @@
     },
     "installer": {
         "file": "WezTerm-nightly-setup.exe",
-        "args": ["/S", "/norestart", "/SP-"]
+        "args": ["/S", "/NORESTART", "/SP-", "/SUPPRESSMSGBOXES", "/DIR=$dir"]
     },
     "uninstaller": {
         "file": "unins000.exe",
-        "args": ["/S", "/norestart", "/SP-"]
+        "args": ["/S", "/NORESTART", "/SP-"]
     },
     "bin": ["wezterm.exe", "wezterm-gui.exe"],
     "shortcuts": [["wezterm-gui.exe", "Wezterm"]]

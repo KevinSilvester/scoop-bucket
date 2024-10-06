@@ -22,7 +22,7 @@
     },
     "installer": {
         "file": "WezTerm-nightly-setup.exe",
-        "args": ["/SP-", "/verysilent", "/norestart"]
+        "args": ["/SP-", "/verysilent", "/norestart", "/dir=$dir"]
     },
     "uninstaller": {
         "file": "unins000.exe",

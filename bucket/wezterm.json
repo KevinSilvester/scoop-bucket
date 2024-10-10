@@ -1,0 +1,44 @@
+{
+    "version": "20240203-110809-5046fc22",
+    "description": "GPU-accelerated terminal emulator",
+    "homepage": "https://github.com/wez/wezterm",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/WezTerm-20240203-110809-5046fc22-setup.exe",
+            "hash": "35a6ec0eff7aa65e3987f14223bfb9df831eaab2964eb441ed6cad4356d252ff"
+        }
+    },
+    "installer": {
+        "file": "WezTerm-20240203-110809-5046fc22-setup.exe",
+        "args": ["/SP-", "/verysilent", "/norestart", "/dir=$dir"]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": ["/SP-", "/verysilent", "/norestart"]
+    },
+    "bin": [
+        "wezterm.exe",
+        "wezterm-gui.exe"
+    ],
+    "shortcuts": [
+        [
+            "wezterm-gui.exe",
+            "Wezterm"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/wez/wezterm",
+        "regex": "WezTerm-([\\w-]+)-setup"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wez/wezterm/releases/download/$version/WezTerm-$version-setup.exe"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
